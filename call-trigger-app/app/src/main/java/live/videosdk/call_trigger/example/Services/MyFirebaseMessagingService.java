@@ -46,7 +46,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
-
         // Handle incoming message (call request)
         Map<String, String> data = remoteMessage.getData();
 

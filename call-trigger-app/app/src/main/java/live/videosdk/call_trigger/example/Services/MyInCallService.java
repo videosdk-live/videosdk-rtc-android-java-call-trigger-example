@@ -28,10 +28,7 @@ public class MyInCallService extends InCallService {
 
     @Override
     public void onCallRemoved(Call call) {
-
-
         super.onCallRemoved(call);
-        // Clean up call-related resources
     }
 
     private void setUpDefaultCallUI(Call call) {
@@ -39,13 +36,6 @@ public class MyInCallService extends InCallService {
         TelecomManager telecomManager = (TelecomManager) getSystemService(TELECOM_SERVICE);
         if (telecomManager != null) {
             if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
-                // TODO: Consider calling
-                //    ActivityCompat#requestPermissions
-                // here to request the missing permissions, and then overriding
-                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                //                                          int[] grantResults)
-                // to handle the case where the user grants the permission. See the documentation
-                // for ActivityCompat#requestPermissions for more details.
                 return;
             }
             telecomManager.showInCallScreen(true);

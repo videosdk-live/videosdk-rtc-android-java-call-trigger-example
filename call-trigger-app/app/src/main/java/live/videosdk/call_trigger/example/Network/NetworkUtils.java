@@ -17,7 +17,6 @@ public class NetworkUtils {
     //Replace with the token you generated from the VideoSDK Dashboard
     String sampleToken = MainApplication.getToken();
     public void createMeeting(MeetingIdCallBack callBack) {
-        Log.d("TAG", "createMeeting: ");
         // we will make an API call to VideoSDK Server to get a roomId
         AndroidNetworking.post("https://api.videosdk.live/v2/rooms")
                 .addHeaders("Authorization", sampleToken) //we will pass the token in the Headers
@@ -28,7 +27,6 @@ public class NetworkUtils {
                         try {
                             // response will contain `meetingID`
                             final String meetingId = response.getString("roomId");
-                            Log.d("TAG", "onResponse: "+ meetingId);
                             callBack.onMeetingIdReceived(meetingId,sampleToken);
                         } catch (JSONException e) {
                             e.printStackTrace();

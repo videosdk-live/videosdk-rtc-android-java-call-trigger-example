@@ -12,12 +12,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 
 // Path to your service account key file for Firebase Admin SDK
-var serviceAccount = require("./videosdk-connectionservic-firebase-adminsdk-u49oe-fbcaab810c.json");
+var serviceAccount = require("add_path_here");
 
 // Initialize Firebase Admin SDK
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://videosdk-connectionservic-default-rtdb.firebaseio.com" // Replace with your database URL
+  databaseURL: "database_url" // Replace with your database URL
 });
 
 // Home Route

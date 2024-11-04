@@ -45,7 +45,6 @@ public class DatabaseUtils {
                     map.put("callerId", MainActivity.myCallId);
                     map.put("token", FcmToken);
 
-                    Log.d("TAG", "sendUserDataToFirebase: " + FcmToken);
                     if (userId != null) {
                         usersRef.child(userId).setValue(map)
                                 .addOnSuccessListener(aVoid -> {
@@ -76,7 +75,6 @@ public class DatabaseUtils {
                             calleeInfoToken = token;
                             NetworkCallHandler.calleeInfoToken = token;
                             callHandler.initiateCall();
-                            Log.d("TAG", "retrieveUserData: " + calleeInfoToken);
                             break;
                         }
                     }

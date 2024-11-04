@@ -42,9 +42,6 @@ String callerID;
                 //update
                 setDisconnected(new DisconnectCause(DisconnectCause.LOCAL));
                 destroy();
-
-                Log.d("CallConnectionService", "Call answered");
-                // Start the video call using VideoSDK here
             }
 
             @Override
@@ -58,8 +55,6 @@ String callerID;
 
                 setDisconnected(new DisconnectCause(DisconnectCause.LOCAL));
                 destroy();
-
-                Log.d("CallConnectionService", "Call rejected");
             }
 
         };
@@ -79,7 +74,6 @@ String callerID;
         Connection connection = new Connection(){};
         connection.setAddress(request.getAddress(), TelecomManager.PRESENTATION_ALLOWED);
         connection.setActive();
-        // Start the video call using VideoSDK here
 
         return connection;
     }
